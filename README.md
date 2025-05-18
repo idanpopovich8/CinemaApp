@@ -8,8 +8,8 @@ To run this project open the directory in your terminal:
 
 
 In a different terminal run :
-1.cd frontend
-2.npm i
+1.cd frontend \n
+2.npm i 
 3.npm run dev
 
 The backend server will run on localhost:3000 by default and the UI will run in localhost:5173 by default.
