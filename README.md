@@ -8,7 +8,7 @@ To run this project open the directory in your terminal:
 
 
 In a different terminal run :
-1.cd frontend \n
+1.cd frontend 
 2.npm i 
 3.npm run dev
 
