@@ -26,10 +26,12 @@ const Register = () => {
       });
 
       const data = await response.json();
+        console.log("Registered user:", data);
+
 
       if (response.ok) {
         // Save userFlag in localStorage to indicate logged in user
-        localStorage.setItem("userFlag", username);
+      localStorage.setItem('userFlag', JSON.stringify(data.user));
         navigate("/"); // Redirect to home page after register
       } else {
         setError(data.message || "Registration failed");

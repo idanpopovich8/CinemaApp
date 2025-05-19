@@ -16,13 +16,16 @@ router.post("/register", async (req, res) => {
     // Check if user exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ message: "username already registered" });
+      return res.status(400).json({ message: "Username already registered" });
     }
 
     const user = new User({ username, password });
     await user.save();
 
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({
+      message: "User registered successfully",
+      user: { id: user._id, username: user.username },
+    });
   } catch (err) {
     console.error("Register route error:", err);
     res.status(500).json({ message: "Server error" });
